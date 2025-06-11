@@ -1,52 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Duck Email Converter</title>
-<style>
-:root,*{--p:#3855d7;--b:#19191c;--f:#fafafa;--d:#202127;--font:sans-serif;--pad:1rem;--gap:10;--mar:0.3rem;--radius:8px;--maxw:100%;--midw:320px;--fz:1rem;--fz-lg:1.2rem;}
-body{margin:0 auto auto;background:var(--b);color:var(--f);font-family:var(--font);display:flex;flex-direction:column;padding:var(--pad);box-sizing:border-box;width:100vw;max-width:var(--midw);text-align:center;justify-content: center;min-width: 300px;place-content: center; align-content: center; min-height: 100svh;}
-input,button,a,video{background:var(--d);color:var(--f);border:none;padding:var(--pad);margin:var(--mar) 0;border-radius:var(--radius);width:var(--maxw);max-width:var(--midw);font-size:var(--fz);box-sizing:border-box;}
-video,embed[video],embed[vid],iframe[video],iframe[vid] {aspect-ratio:16/9;}
-input,button,a {min-height: 0.12in;min-width: 0.3in;}
-span {display: flex;flex-wrap: wrap;flex-direction: row;align-items: center;justify-content: center;gap: var(--gap);}
-span > * {display: flex;flex: 1;margin: 0;}
-span > *:not(:last-child) {margin-right: var(--mar);}
-button[p],a[p]{background:var(--p);color:var(--f);cursor:pointer;
-}
-</style>
+<title>Auto Launch</title>
+<script src="popup.js"></script>
 </head>
 <body>
-<span>
-<input type="email" id="fshio" placeholder="Your duck email" />
-<button id="conEm" onmousedown="conEm()" style="max-width: 90px;" >Convert</button>
-</span>
-<input type="email" id="rfthk" placeholder="Target duck email" />
-<script>
-function conEm() {
-const _MYdck = document.querySelector('#fshio');
-const _MTSGE = document.querySelector('#rfthk');
-const val = _MTSGE.value.trim();  
-_MYdck.value = _MYdck.value.trim().split("@")[0] + "@duck.com";
-const duckVal = _MYdck.value.trim().split("@")[0] + "@duck.com";
-_MYdck.value = duckVal;
-const [encodedPart] = val.split(`_${duckVal}`);
-const [prefix, domain] = encodedPart.includes("_at_") ? encodedPart.split("_at_") : val.split("@");
-_MTSGE.value = encodedPart.includes("_at_") ? `${prefix}@${domain}` : `${prefix}_at_${domain}_${duckVal}`;
-}
-</script>
-
-<script>
-(function _A_SVALL(){
-const _G=()=>Array.from(document.querySelectorAll('input,textarea,select,[save]'));
-const _ST=(k,v)=>{typeof chrome!='undefined'&&chrome.storage&&chrome.storage.local?chrome.storage.local.set({[k]:v}):localStorage.setItem(k,v)};
-const _GT=(k,c)=>{if(typeof chrome!='undefined'&&chrome.storage&&chrome.storage.local){chrome.storage.local.get(k,r=>c(r[k]??null))}else{c(localStorage.getItem(k))}};
-const _SV=()=>{_G().forEach((e,i)=>_ST(`_INID${i}`,'value'in e?e.value:(e.textContent||'')))};
-const _RS=()=>{_G().forEach((e,i)=>_GT(`_INID${i}`,v=>{if(v!=null){'value'in e?e.value=v:e.textContent=v}}))};
-const _LS=()=>{_G().forEach(e=>'value'in e?(e.oninput=_SV,e.onchange=_SV):e.hasAttribute('save')&&new MutationObserver(_SV).observe(e,{childList:1,subtree:1,characterData:1}))};
-(_RS(),_LS());document.addEventListener('DOMContentLoaded',()=>{_RS();_LS()});
-})();
-</script>
-  
-<script src="popup.js"></script>
+<p>Launching App Window...</p>
 </body>
 </html>
