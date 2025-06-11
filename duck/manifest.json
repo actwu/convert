@@ -1,12 +1,10 @@
 {
 "manifest_version": 3,
-"name": "duck mail",
+"name": "duck mail to",
 "version": "1.0",
-"permissions": ["windows"],
-"background": {
-"service_worker": "bg.js"
-},
+"description": "Convert duck.com addresses to use your Duck alias.",
+"permissions": ["storage"],
 "action": {
-"default_title": "Open App"
+"default_popup": "app.html"
 }
 }
