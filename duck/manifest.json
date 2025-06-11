@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Duck Email Converter",
+  "version": "1.0",
+  "description": "Convert duck.com addresses to use your Duck alias.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
